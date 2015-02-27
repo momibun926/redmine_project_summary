@@ -1,1 +1,2 @@
-# redmine_project_summary
+# redmine project summary
+Now work in progress.
