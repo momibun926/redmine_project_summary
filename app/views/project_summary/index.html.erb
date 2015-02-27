@@ -1,0 +1,24 @@
+<h2>ProjectSummaryController#index</h2>
+<% html_title('Project Summary') %>
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'project_summary',         :plugin => 'redmine_project_summary' %>
+  <%= javascript_include_tag 'drawchart',            :plugin => 'redmine_project_summary' %>
+  <%= javascript_include_tag 'highcharts.js',        :plugin => 'redmine_project_summary' %>
+  <%= javascript_include_tag '../../../javascripts/select_list_move', :plugin => 'redmine_project_summary' %>
+<% end %>
+<div id="evm-graph-lines" class="evm-chart">
+  <%= render :partial => '/project_summary/project_summary_chart_js',:locals => { tracker_chart_data: @status_count.to_a} %>
+</div>
+<%= @tracker_count  %>
+</br>
+<%= @tracker_status_count  %>
+</br>
+<%= @status_count  %>
+</br>
+<%= @category_count  %>
+</br>
+<%= @user_count  %>
+</br>
+<%= @summary_count  %>
+</br>
+<%= @issues  %>

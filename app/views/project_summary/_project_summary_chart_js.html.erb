@@ -1,0 +1,6 @@
+<script>
+  var projectChartData = <%= raw tracker_chart_data.to_json %>;
+  var projectChartHtmlElement = 'evm-graph-lines';
+  drawTrackerChart(projectChartData, projectChartHtmlElement);
+</script>
+
