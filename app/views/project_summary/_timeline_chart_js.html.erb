@@ -1,0 +1,5 @@
+<script>
+  var timelineChartData = <%= raw timeline_chart_data.to_json %>;
+  var timelineChartHtmlElement = 'timeline-chart';
+  drawTimelineChart(timelineChartData, timelineChartHtmlElement);
+</script>

@@ -1,0 +1,5 @@
+<script>
+  var categoryChartData = <%= raw category_chart_data.to_json %>;
+  var categoryChartHtmlElement = 'category-chart';
+  drawPieChart(categoryChartData, categoryChartHtmlElement);
+</script>

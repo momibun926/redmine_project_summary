@@ -1,0 +1,6 @@
+<script>
+  var trackerChartData = <%= raw tracker_chart_data.to_json %>;
+  var trackerChartHtmlElement = 'tracker-chart';
+  drawPieChart(trackerChartData, trackerChartHtmlElement);
+</script>
+<%= raw tracker_chart_data.to_json %>

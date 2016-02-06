@@ -1,13 +1,25 @@
 <h2>ProjectSummaryController#index</h2>
 <% html_title('Project Summary') %>
 <% content_for :header_tags do %>
-  <%= stylesheet_link_tag 'project_summary',         :plugin => 'redmine_project_summary' %>
-  <%= javascript_include_tag 'drawchart',            :plugin => 'redmine_project_summary' %>
-  <%= javascript_include_tag 'highcharts.js',        :plugin => 'redmine_project_summary' %>
-  <%= javascript_include_tag '../../../javascripts/select_list_move', :plugin => 'redmine_project_summary' %>
+  <%= stylesheet_link_tag 'project_summary',   :plugin => 'redmine_project_summary' %>
+  <%= javascript_include_tag 'drawchart',      :plugin => 'redmine_project_summary' %>
+  <%= javascript_include_tag 'highcharts.js',  :plugin => 'redmine_project_summary' %>
 <% end %>
-<div id="evm-graph-lines" class="evm-chart">
-  <%= render :partial => '/project_summary/project_summary_chart_js',:locals => { tracker_chart_data: @status_count.to_a} %>
+<div id="timeline-chart" class="timeline">
+  <%= render :partial => '/project_summary/timeline_chart_js',
+             :locals => { timeline_chart_data: @timeline.to_a } %>
+</div>
+<div id="tracker-chart" class="chart-tracker">
+  <%= render :partial => '/project_summary/tracker_chart_js',
+             :locals => { tracker_chart_data: @tracker_count.to_a } %>
+</div>
+<div id="status-chart" class="chart-status">
+  <%= render :partial => '/project_summary/status_chart_js',
+             :locals => { status_chart_data: @status_count.to_a } %>
+</div>
+<div id="category-chart" class="chart-category">
+  <%= render :partial => '/project_summary/category_chart_js',
+             :locals => { category_chart_data: @category_count.to_a } %>
 </div>
 <%= @tracker_count  %>
 </br>
@@ -19,6 +31,6 @@
 </br>
 <%= @user_count  %>
 </br>
-<%= @summary_count  %>
+<%= @timeline  %>
 </br>
 <%= @issues.first.tracker  %>

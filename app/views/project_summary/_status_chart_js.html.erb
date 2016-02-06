@@ -1,0 +1,5 @@
+<script>
+  var statusChartData = <%= raw status_chart_data.to_json %>;
+  var statusChartHtmlElement = 'status-chart';
+  drawPieChart(statusChartData, statusChartHtmlElement);
+</script>
